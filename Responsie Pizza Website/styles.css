@@ -1,0 +1,551 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap');
+
+:root {
+    --primary-color: #333; /* Un gris oscuro elegante */
+    --secondary-color: #777; /* Un gris más claro */
+    --accent-color: #d8a771; /* Un tono dorado suave para acentos */
+    --background-color: #f9f9f9; /* Un fondo muy claro */
+    --text-color: var(--primary-color);
+    --heading-color: var(--primary-color);
+    --font-primary: 'Playfair Display', serif; /* Fuente elegante para títulos y encabezados */
+    --font-secondary: 'Roboto', sans-serif; /* Fuente legible para el cuerpo del texto */
+    --header-height: 4rem;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-secondary);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    padding-top: var(--header-height); /* Espacio para el header fijo */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-primary);
+    color: var(--heading-color);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: darken(var(--accent-color), 10%);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.grid {
+    display: grid;
+    gap: 2rem;
+}
+
+.section {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.section__title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semitransparente */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.nav__logo {
+    font-family: var(--font-primary);
+    font-size: 1.8rem;
+    color: var(--primary-color);
+}
+
+.nav__menu {
+    display: flex;
+    align-items: center;
+}
+
+.nav__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav__item {
+    margin-left: 2rem;
+}
+
+.nav__link {
+    color: var(--primary-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav__link:hover,
+.nav__link.active-link {
+    color: var(--accent-color);
+}
+
+.nav__toggle,
+.nav__close {
+    display: none;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+/* Inicio */
+.inicio {
+    padding-top: 6rem;
+    text-align: center;
+}
+
+.inicio__container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+}
+
+.inicio__data {
+    margin-bottom: 2rem;
+}
+
+.inicio__title {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.inicio__description {
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+    margin-bottom: 2rem;
+}
+
+.button {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 0.3rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.inicio__img img {
+    max-width: 80%;
+    height: auto;
+    border-radius: 0.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Sobre Nosotros */
+.sobre-nosotros__container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+}
+
+.sobre-nosotros__img img {
+    max-width: 80%;
+    height: auto;
+    border-radius: 0.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.sobre-nosotros__data {
+    text-align: left;
+}
+
+.sobre-nosotros__description {
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+}
+
+/* Popular */
+.popular__container {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding-bottom: 2rem;
+}
+
+.popular__card {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.popular__img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.3rem;
+    margin-bottom: 1rem;
+}
+
+.popular__name {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.popular__description {
+    font-size: 0.95rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.popular__price {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    font-weight: 500;
+}
+
+.button--card {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.7rem 1.5rem;
+    border-radius: 0.3rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+/* Productos */
+.productos__container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding-bottom: 2rem;
+}
+
+.producto__card {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.producto__img {
+    max-width: 70%;
+    height: auto;
+    margin: 0 auto 1rem;
+    border-radius: 0.3rem;
+}
+
+.producto__name {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.producto__description {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.producto__price {
+    font-size: 1.1rem;
+    color: var(--accent-color);
+    font-weight: 500;
+}
+
+/* Contacto */
+.contacto__container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+}
+
+.contacto__data {
+    text-align: center;
+}
+
+.contacto__description {
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+    margin-bottom: 2rem;
+}
+
+.contacto__info {
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.contacto__item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary-color);
+}
+
+.contacto__icon {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+}
+
+.contacto__form {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.contacto__inputs {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.contacto__content {
+    position: relative;
+}
+
+.contacto__input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--secondary-color);
+    border-radius: 0.3rem;
+    font-size: 1rem;
+    color: var(--primary-color);
+}
+
+.contacto__label {
+    position: absolute;
+    top: 0.3rem;
+    left: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.contacto__input:focus + .contacto__label,
+.contacto__input:not(:placeholder-shown) + .contacto__label {
+    top: -0.7rem;
+    left: 0.3rem;
+    font-size: 0.75rem;
+    background-color: white;
+    padding: 0 0.2rem;
+}
+
+.contacto__area {
+    margin-bottom: 1.5rem;
+}
+
+.contacto__area textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--secondary-color);
+    border-radius: 0.3rem;
+    font-size: 1rem;
+    color: var(--primary-color);
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.footer__container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.footer__logo {
+    font-family: var(--font-primary);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.footer__description {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+}
+
+.footer__social {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer__social-link {
+    font-size: 2rem;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.footer__social-link:hover {
+    color: var(--accent-color);
+}
+
+.footer__title {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.footer__links,
+.footer__info {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer__links li,
+.footer__info li {
+    margin-bottom: 0.5rem;
+}
+
+.footer__link,
+.footer__info li i {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer__link:hover {
+    color: white;
+}
+
+.footer__info li i {
+    margin-right: 0.5rem;
+}
+
+.footer__rights {
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    color: var(--secondary-color);
+}
+
+/* Adaptación para diferentes pantallas */
+@media (max-width: 768px) {
+    .nav__menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--background-color);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 101;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .nav__menu.show-menu {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav__list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav__item {
+        margin: 1rem 0;
+    }
+
+    .nav__link {
+        font-size: 1.2rem;
+    }
+
+    .nav__toggle,
+    .nav__close {
+        display: block;
+    }
+
+    .inicio__container,
+    .sobre-nosotros__container,
+    .contacto__container {
+        grid-template-columns: 1fr;
+    }
+
+    .inicio__img img,
+    .sobre-nosotros__img img {
+        max-width: 100%;
+    }
+
+    .sobre-nosotros__data {
+        text-align: center;
+    }
+
+    .contacto__form {
+        padding: 1.5rem;
+    }
+
+    .contacto__inputs {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+    .inicio__container,
+    .sobre-nosotros__container {
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        text-align: left;
+    }
+
+    .sobre-nosotros__data {
+        text-align: left;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1400px; /* Un ancho máximo más amplio para pantallas grandes */
+    }
+
+    .inicio__container {
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        text-align: left;
+    }
+}
